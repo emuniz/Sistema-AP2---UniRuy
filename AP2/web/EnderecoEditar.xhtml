@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>SISTEMA - AP2 </title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h1>EDITAR ENDEREÇO</h1>
+            
+            <h:outputLabel value="CÓDIGO:"/> &nbsp;
+            <h:outputLabel value="#{EnderecoController.endereco.endereco_id}"/>
+            <br/><br/>
+            
+            <h:outputLabel value="ENDEREÇO:"/> &nbsp;
+            <h:inputText value="#{EnderecoController.endereco.endereco}" maxlength="50" />
+            <br/><br/>
+            
+            <h:outputLabel value="COMPLEMENTO:"/> &nbsp;
+            <h:inputText value="#{EnderecoController.endereco.endereco2}" maxlength="50" />
+            <br/><br/>
+            
+            <h:outputLabel value="BAIRRO:"/> &nbsp;
+            <h:inputText value="#{EnderecoController.endereco.bairro}" maxlength="20" />
+            <br/><br/>
+            
+            <h:outputLabel value="CEP:"/> &nbsp;
+            <h:inputText value="#{EnderecoController.endereco.cep}" maxlength="10" />
+            <br/><br/>
+            
+            <h:outputLabel value="TELEFONE:"/> &nbsp;
+            <h:inputText value="#{EnderecoController.endereco.telefone}" maxlength="20" />
+            <br/><br/>
+            
+            <h:outputLabel value="CIDADE:"/> &nbsp;
+            
+            <h:selectOneMenu id="cboCidades" value="#{EnderecoController.endereco.cidade_id.cidade}">
+
+                <f:selectItem itemLabel="Selecione uma Cidade" itemValue="#{EnderecoController.endereco.cidade_id.cidade}"/>
+
+                <f:selectItems value="#{cidadeController.cidades}" var="umaCidade" itemLabel="#{umaCidade.cidade}" itemValue="#{umaCidade.cidade_id}"/>
+
+            </h:selectOneMenu>
+            <br/><br/>
+            
+            <h:commandButton value="Voltar" action="voltaParaListagem" /> &nbsp;&nbsp;
+            <h:commandButton value="Gravar" action="#{EnderecoController.finalizaEdicao()}"/>
+            
+        </h:form>
+    </h:body>
+</html>
+

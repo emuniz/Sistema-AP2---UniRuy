@@ -1,0 +1,86 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 09/06/2020, 19:48:28
+    Author     : Muniz
+*/
+
+root{
+    display: flex;
+    text-align: center;
+}
+
+#menu{
+    width: 11em;
+    padding: 0;
+    margin: 0;
+    font: 12px;
+    font-family: Roboto, sans-serif;
+    background: #e2a9f5;
+    border-top: 3px solid green;
+    border-bottom: 3px solid green;
+    text-align: center;
+}
+
+#menu li{
+    list-style: none;
+    margin: 0.5em 0 0.5em 0 0.5em;
+    
+}
+
+#menu li a{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    color: #000;
+    
+}
+
+#menu li a:visited{
+    color: #fff
+}
+
+#menu li a:hover{
+    color: #000;
+    background: #000;
+}
+
+#menu li a:hover{
+    color: #000;
+    background: #fff;
+}
+
+
+
+.verde{
+    background-color: greenyellow;
+    font-family: serif;
+    font-size:  14px;
+}
+
+.rosa{
+    background-color: #faacf7;
+    font-family: serif;
+    font-size:  14px;
+}
+
+.azul{
+    background-color: aqua;
+    font-family: serif;
+    font-size:  14px;
+}
+
+.cabecalho{
+    background-color: #0af03b;
+    font-family: sans-serif;
+   
+}
+
+h1, table{
+    text-align: center;
+}
+
+

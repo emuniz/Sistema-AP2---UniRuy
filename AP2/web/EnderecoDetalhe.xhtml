@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>SISTEMA - AP2</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h1>DETALHES DE UM ENDEREÇO</h1>
+            
+            <h:outputLabel value="CÓDIGO:"/> &nbsp;
+            <h:outputLabel value="#{EnderecoController.endereco.endereco_id}"/>
+            <br/><br/>
+                   
+            <h:outputLabel value="ENDEREÇO: "/> &nbsp;
+            <h:outputLabel value="#{EnderecoController.endereco.endereco}" />
+            <br/><br/>
+            
+            <h:outputLabel value="COMPLEMENTO: "/> &nbsp;
+            <h:outputLabel value="#{EnderecoController.endereco.endereco2}" />
+            <br/><br/>
+            
+            <h:outputLabel value="BAIRRO: "/> &nbsp;
+            <h:outputLabel value="#{EnderecoController.endereco.bairro}" />
+            <br/><br/>
+            
+            <h:outputLabel value="CEP: "/> &nbsp;
+            <h:outputLabel value="#{EnderecoController.endereco.cep}" />
+            <br/><br/>
+            
+            <h:outputLabel value="TELEFONE: "/> &nbsp;
+            <h:outputLabel value="#{EnderecoController.endereco.telefone}"/>
+            <br/><br/>
+            
+            <h:outputLabel value="CIDADE: "/>&nbsp;
+            <h:outputLabel value="#{EnderecoController.endereco.cidade_id.cidade_id}"/>
+            <br/><br/>
+            
+            
+            <h:commandButton value="Voltar" action="voltaParaListagem" /> &nbsp;&nbsp;
+            <h:commandButton value="Editar" action="vaiParaEditar"/>
+            
+        </h:form>
+    </h:body>
+</html>
+

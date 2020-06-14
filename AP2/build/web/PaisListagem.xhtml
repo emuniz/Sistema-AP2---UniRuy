@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <link rel="stylesheet" type="text/css" href="styles.css" />
+        <title>Listagem de países</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h1>LISTAGEM DOS PAÍSES CADASTRADOS</h1>
+            <h:commandButton value="VOLTAR" style="width: 100%" action="voltaParaIndex"/>
+            <h:commandButton value="CRIAR NOVO PAÍS" style="width: 100%" action="#{PaisController.prepararInclusao()}" />
+            <br/>
+            
+            <h:dataTable style="width: 100%"
+                         var="Pais"
+                         value="#{PaisController.paises}"
+                         border="1"
+                         rowClasses="rosa"
+                         headerClass="cabecalho">
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputLabel value="CÓDIGO"/>
+                    </f:facet>
+                    
+                    <h:outputLabel value="#{Pais.pais_id}"/>                    
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputLabel value="NOME"/>
+                    </f:facet>
+                    
+                    <h:outputLabel value="#{Pais.pais}"/>                    
+                </h:column>
+                
+                              
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputLabel value="ÚLTIMA ATUALIZAÇÃO"/>
+                    </f:facet>
+                    
+                    <h:outputLabel value="#{Pais.ultima_atualizacao}">
+                        <f:convertDateTime pattern="dd/MM/yyy" />
+                    </h:outputLabel>
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputLabel value="AÇÃO"/>
+                    </f:facet>
+                    
+                    <h:commandLink value="Detalhe" action="vaiParaDetalhe">
+                        <f:setPropertyActionListener target="#{PaisController.pais}" value="#{Pais}" />
+                    </h:commandLink>
+                    
+                    <h:outputLabel value="|"/>
+                    <h:commandLink value="Editar" action="vaiParaEditar">
+                        <f:setPropertyActionListener target="#{PaisController.pais}" value="#{Pais}" />
+                    </h:commandLink>
+
+                    <h:outputLabel value="|"/>
+                    
+                    <h:commandLink value="Deletar" action="#{PaisController.finalizaDelecao()}">
+                        <f:setPropertyActionListener target="#{PaisController.pais}" value="#{Pais}"/>
+                    </h:commandLink>
+                                      
+                </h:column>
+                
+            </h:dataTable>
+            
+        </h:form>
+    </h:body>
+</html>
+

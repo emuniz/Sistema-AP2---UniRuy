@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Edição de Cidade</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h1>EDIÇÃO DA CIDADE</h1>
+            
+            <table>
+                <tbody>
+                    <tr>
+                        <td> <h:outputLabel value="CÓDIGO:"/> </td>
+                        <td> <h:outputLabel value="#{CidadeController.cidade.cidade_id}"/> </td>
+                    </tr>
+                    <tr>
+                        <td> <h:outputLabel value="NOME"/> </td>
+                        <td> <h:inputText value="#{CidadeController.cidade.cidade}" maxlength="255" size="80" />  </td>
+                    </tr>
+          
+                </tbody>
+            </table>
+            <br/>
+            <h:commandButton value="Voltar" style="width: 48%" action="voltaParaListagem" />
+            <h:commandButton value="Gravar" style="width: 48%" action="#{CidadeController.finalizaEdicao()}" />
+            
+        </h:form>
+    </h:body>
+</html>
+

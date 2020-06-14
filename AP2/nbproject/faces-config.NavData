@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scene Scope="Project" version="2">
+    <Scope Scope="Faces Configuration Only"/>
+    <Scope Scope="Project">
+        <Node id="PaisEditar.xhtml" x="135" y="424" zoom="true"/>
+        <Node id="index.xhtml" x="422" y="149" zoom="true"/>
+        <Node id="PaisIncluir.xhtml" x="130" y="318" zoom="true"/>
+        <Node id="CidadeListagem.xhtml" x="704" y="314" zoom="true"/>
+        <Node id="EnderecoListagem.xhtml" x="725" y="32" zoom="true"/>
+        <Node id="EnderecoDetalhe.xhtml" x="967" y="473" zoom="true"/>
+        <Node id="EnderecoIncluir.xhtml" x="1012" y="140" zoom="true"/>
+        <Node id="CidadeIncluir.xhtml" x="108" y="571" zoom="true"/>
+        <Node id="EnderecoEditar.xhtml" x="999" y="270" zoom="false"/>
+        <Node id="PaisDetalhe.xhtml" x="396" y="315" zoom="true"/>
+        <Node id="CidadeEditar.xhtml" x="571" y="571" zoom="true"/>
+        <Node id="PaisListagem.xhtml" x="123" y="141" zoom="true"/>
+    </Scope>
+    <Scope Scope="All Faces Configurations"/>
+</Scene>

@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <link rel="stylesheet" type="text/css" href="styles.css" />
+        <title>Listagem dos Endereços</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h1>LISTAGEM DOS ENDEREÇOS CADASTRADOS</h1>
+            <h:commandButton value="VOLTAR" style="width: 100%" action="voltaParaIndex"/>
+            <h:commandButton value="CADASTRAR NOVO ENDEREÇO" style="width: 100%" action="#{EnderecoController.prepararInclusao()}" />
+            <br/>
+            
+            <h:dataTable style="width: 100%"
+                         var="address"
+                         value="#{EnderecoController.enderecos}"
+                         border="1"
+                         rowClasses="rosa"
+                         headerClass="cabecalho">
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputLabel value="CÓDIGO"/>
+                    </f:facet>
+                    
+                    <h:outputLabel value="#{address.endereco_id}"/>                    
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputLabel value="ENDEREÇO"/>
+                    </f:facet>
+                    
+                    <h:outputLabel value="#{address.endereco}"/>                    
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputLabel value="BAIRRO"/>
+                    </f:facet>
+                    
+                    <h:outputLabel value="#{address.bairro}">
+                    </h:outputLabel> 
+                </h:column>
+               
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputLabel value="CEP"/>
+                    </f:facet>
+                    
+                    <h:outputLabel value="#{address.cep}">
+                    </h:outputLabel> 
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputLabel value="TELEFONE"/>
+                    </f:facet>
+                    
+                    <h:outputLabel value="#{address.telefone}">
+                    </h:outputLabel> 
+                </h:column>
+                
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputLabel value="OPÇÃO"/>
+                    </f:facet>
+                    
+                    <h:commandLink value="Detalhe" action="vaiParaDetalhe">
+                        <f:setPropertyActionListener target="#{EnderecoController.endereco}" value="#{address}" />
+                    </h:commandLink>
+                    
+                    <h:outputLabel value="|"/>
+                    <h:commandLink value="Editar" action="vaiParaEditar">
+                        <f:setPropertyActionListener target="#{EnderecoController.endereco}" value="#{address}" />
+                    </h:commandLink>
+                    
+                    
+                    <h:outputLabel value="|"/>
+                    
+                    <h:commandLink value="Deletar" action="#{EnderecoController.finalizaDelecao()}">
+                        <f:setPropertyActionListener target="#{EnderecoController.endereco}" value="#{address}"/>
+                    </h:commandLink>
+                                      
+                </h:column>
+                
+            </h:dataTable>
+            
+        </h:form>
+    </h:body>
+</html>
+
